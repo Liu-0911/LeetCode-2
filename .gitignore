@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#插件多余文件
+/leetcode/editor/cn/doc/
