@@ -45,13 +45,21 @@
 class MyHashSet(object):
 
     def __init__(self):
+        self.buckets = 1009 # 拉链法地址的个数
+        self.table = [[] for i in range(self.buckets)] # 用数组形式实现链地址
 
+    def hash(self,key):
+        return key % self.buckets
 
     def add(self, key):
         """
         :type key: int
         :rtype: None
         """
+        hashkey = self.hash(key)
+        if key in self.table[hashkey]:
+            return
+        self.table[hashkey].append(key)
 
 
     def remove(self, key):
@@ -59,6 +67,10 @@ class MyHashSet(object):
         :type key: int
         :rtype: None
         """
+        hashkey = self.hash(key)
+        if key not in self.table[hashkey]:
+            return
+        self.table[hashkey].remove(key)
 
 
     def contains(self, key):
@@ -66,7 +78,8 @@ class MyHashSet(object):
         :type key: int
         :rtype: bool
         """
-
+        hashkey = self.hash(key)
+        return key in self.table[hashkey]
 
 
 # Your MyHashSet object will be instantiated and called as such:
