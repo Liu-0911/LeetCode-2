@@ -69,6 +69,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/[1604]警告一小时内使用相同员工卡大于等于三次的人.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/[1604]警告一小时内使用相同员工卡大于等于三次的人.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1604" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/[1604]警告一小时内使用相同员工卡大于等于三次的人.py" />
+              <option name="titleSlug" value="alert-using-same-key-card-three-or-more-times-in-a-one-hour-period" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/[167]两数之和 II - 输入有序数组.py">
           <value>
             <LeetcodeEditor>
