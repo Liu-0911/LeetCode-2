@@ -89,15 +89,24 @@ class Solution(object):
 
         #   并查集
         f = {}  # 定义 "节点 -> 父亲" 的字典
+        rank = {} # 记录集合的秩
 
         def find(x):
             f.setdefault(x,x)  # 如果在字典中x不存在，则x自身就是父亲，否则跳过
+            rank.setdefault(x,1)
             if f[x] != x:  # 递归查找父亲，并给每一个节点设置的都是父亲的值，这里有路径压缩
                 f[x] = find(f[x])
             return f[x]
 
         def union(x, y):  # 合并两个节点的父亲，并把x的父亲改为y的父亲，即将x合并到y的父亲上去，此处没有按秩合并
-            f[find(x)] = find(y)
+            rootx = find(x)
+            rooty = find(y)
+            if rootx >= rooty:
+                f[rooty] = rootx
+                rank[rootx] += rank[rooty]
+            else:
+                f[rootx] = rooty
+                rank[rooty] += rank[rootx]
 
         if not grid: return 0  # 为空，结束
         row = len(grid)
